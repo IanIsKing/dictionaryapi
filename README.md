@@ -1,3 +1,13 @@
+# This is a basic dictionary app.
+
+To use the this apply, simply type a word in the search input and click on the search button to get a definition.
+
+# Register an account with https://www.dictionaryapi.com/ to get your API key.
+
+your Api key should be stored in a .env file - REACT_APP_API_KEY=
+
+Enjoy
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
