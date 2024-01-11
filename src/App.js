@@ -1,6 +1,7 @@
 import "./App.css";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import { fetchWordDefinition } from "./fetchWordDefinition";
 
 function App() {
   // Declare a new state variables
@@ -11,25 +12,13 @@ function App() {
   // Get the API key from the .env file
   const apiKey = process.env.REACT_APP_API_KEY;
 
-  // Function to get the definition of the word
+  // Function to get the definition of the word using a function from fetchWordDefinition.js
   const getDefinition = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch(
-        `https://www.dictionaryapi.com/api/v3/references/sd4/json/${word}?key=${apiKey}`
-      );
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
-      const text = await response.text();
-      try {
-        const data = JSON.parse(text);
-        setMeaning(data);
-      } catch (err) {
-        console.error("JSON parsing error:", err);
-        // Handle parsing error
-      }
+      const data = await fetchWordDefinition(word, apiKey);
+      setMeaning(data);
     } catch (error) {
       console.error("Fetching error:", error);
       // Handle the fetch error
