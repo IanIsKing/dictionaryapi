@@ -1,3 +1,5 @@
+// tests if the Apps heading is rendered correctly
+
 import React from "react";
 import renderer from "react-test-renderer";
 // import { renderer } from "@testing-library/react";

@@ -1,3 +1,5 @@
+// test for fetchWordDefinition function
+
 import { fetchWordDefinition } from "./fetchWordDefinition";
 import { expect, test } from "@jest/globals";
 

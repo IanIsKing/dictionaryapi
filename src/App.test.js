@@ -1,3 +1,5 @@
+// another version of testing if the Apps heading is rendered correctly
+
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
